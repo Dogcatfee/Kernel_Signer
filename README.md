@@ -28,6 +28,7 @@ run the mainline kernel on their Chromebooks.
 It is assumed that the reader is familiar with:
 * Chromebook Developer mode
 * Arch Linux Arm with Chromebook Kernel (3.14)
+
 If not, there are recourses:
 * Arch Linux Arm guide for Asus Chromebook Flip C100P (same CPU), very good guide.
 * The Arch Wiki
