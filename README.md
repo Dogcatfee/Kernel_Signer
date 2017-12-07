@@ -12,7 +12,6 @@ run the mainline kernel on their Chromebooks.
 * networkmanager and network-manager-applet
 * gnome-keyring
 * TLP
-* uboot-tools (for kernel signing)
 
 ## Working
 * Touchpad
