@@ -1,5 +1,5 @@
 # Arch Linux Mainline Kernel on ASUS C201PA Rockchip
-### Have only tested with LibreBoot BIOS
+### Only tested with LibreBoot BIOS
 This is not intended to be a foolproof how-to/guide on how to install
 Arch Linux Arm Mainline or otherwise on the Asus C201PA Chromebook.
 This is intended to be helpful information for those who want to 
