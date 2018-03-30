@@ -2,7 +2,7 @@
 
 # Generate kernel files
 echo "(Stage 1) Kernel files"
-mkimage -D "-I dts -O dtb -p 2048" -f /kernel.its vmlinux.uimg
+mkimage -D "-I dts -O dtb -p 2048" -f kernel.its vmlinux.uimg
 
 # Generate blank bootloader file
 echo "(Stage 2) Bootloader file"
