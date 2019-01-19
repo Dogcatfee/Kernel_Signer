@@ -40,5 +40,3 @@ partition that the bootloader is to be written to.
 * sign_kernel_full.sh
 * cmdline
 * kernel.its
-### From the Arch Linux Arm Veyron image
-* vmlinux.kpart
