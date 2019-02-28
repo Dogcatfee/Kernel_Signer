@@ -9,7 +9,7 @@ echo "(Stage 2) Bootloader file"
 dd if=/dev/zero of=bootloader.bin bs=512 count=1
 
 # Sign and pack boot image
-echo "(Stage 3) Sign Kernel to file"
+echo "(Stage 3) Pack kernel into bootloader file"
 vbutil_kernel \
     --pack vmlinux.kpart \
     --version 1 \

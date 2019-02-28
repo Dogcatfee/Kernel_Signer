@@ -1,38 +1,30 @@
 # Arch Linux Mainline Kernel on ASUS C201PA Rockchip
-### Only tested with LibreBoot BIOS
-This is not intended to be a foolproof how-to/guide on how to install
-Arch Linux Arm Mainline or otherwise on the Asus C201PA Chromebook.
-This is intended to be helpful information for those who want to 
-run the mainline kernel on their Chromebooks.
 
-
-### Libreboot download, for those who want it. [LINK](https://www.mirrorservice.org/sites/libreboot.org/release/stable/20160902/rom/depthcharge/)
-
-### Recommend to back these up from the Chromebook
-* /usr/bin/cgpt
-* /usr/bin/dump_kernel_config
-* /usr/bin/vbutil_kernel
-* /usr/share/vboot/
-* /usr/share/vboot/devkeys
+#### Libreboot download, for those who want it. [LINK](https://www.mirrorservice.org/sites/libreboot.org/release/stable/20160902/rom/depthcharge/)
 
 ## Packages Needed
 * uboot-tools
 * vboot-utils
-### Mainline Kernel
-* linux-armv7
-* linux-armv7-chromebook
 
-## Copy the Files - if the distribution does not have them
-In Arch Linux Arm copy the backed up directory `/usr/share/vboot/devkeys`
-from ChromeOS to Arch Linux. After copying you should have the devkeys 
-folder in `/usr/share/vboot/`, where the devkeys folder has all the devkey
-files.
 
-## Configure the Script
-In the last line of the script change `null` to the appropriate 
-partition that the bootloader is to be written to.
+### Configure ```sign_kernel_full.sh```
+In the last line of ```sign_kernel_full.sh``` change `null` to the kernel partition.
 
-## Run the Script
+### Configure ```cmdline```
+If writing the kernel partition from a different host ```root=PARTUUID=%U/PARTNROFF=1``` in ```cmdline``` needs to be changed. 
+
+Running ```blkid``` as root will show the PARTUUID for disks connected to the system.
+```
+/dev/sde1: PARTLABEL="Kernel" PARTUUID="24557c83-0790-5d42-bfa6-18f85f56e048"
+/dev/sde2: LABEL="_/" UUID="2161061e-8612-4e18-a4e1-0e95aca6d2ff" TYPE="ext4" PARTLABEL="Root" PARTUUID="1831c8a7-9fcb-e344-a56e-5425356afde5"
+```
+The updated value for ```root``` in this case would be ```root=PARTUUID=1831c8a7-9fcb-e344-a56e-5425356afde5```, since ```/dev/sde2``` is the root partition.
+
+### Configure ```kernel.its```
+Be sure that ```data = /incbin/("/boot/zImage");``` and ```data = /incbin/("/boot/dtbs/rk3288-veyron-speedy.dtb");``` both have the correct paths for the kernel image and dtb respectively
+
+
+### Run the Script
 `sudo ./sign_kernel_full.sh`
 
 # Index
