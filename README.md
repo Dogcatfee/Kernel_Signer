@@ -3,7 +3,7 @@
 #### Libreboot download, for those who want it. [LINK](https://www.mirrorservice.org/sites/libreboot.org/release/stable/20160902/rom/depthcharge/)
 
 ### About Libreboot
-Have not gotten in system programming of libreboot to work properly outside of ChromeOS as of yet. In case of a bad flash or build the system can easily be recovered with a SOIC8 adapter cable connected to a Raspberry Pi. This requires a near complete dissasembly of the system.
+Have not gotten in system programming of libreboot to work properly outside of ChromeOS as of yet. In case of a bad flash or build the system can easily be recovered with a SOIC8 adapter cable connected to a Raspberry Pi (SPI is the protocol and spidev must be enabled). This requires a near complete dissasembly of the system.
 
 Libreboot is not required to use the mainline kernel and is an option only for those who wish to have a FOSS bios replacement. The Libreboot build is still only coreboot and does not offer any GRUB functionality, kernel partitions are still required, and it will still boot ChromeOS.
 
